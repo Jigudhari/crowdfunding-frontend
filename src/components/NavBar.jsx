@@ -1,11 +1,15 @@
 import { Link, Outlet } from "react-router-dom";
-function NavBar(){
+
+function NavBar() {
     return (
         <div>
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/project">Project</Link>
+                <ul> 
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/login">Log In</Link></li>
+                </ul>
             </nav>
+            <Outlet />
         </div>
     );
 }
