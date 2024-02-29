@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import useProject from "../hooks/use-project";
+import CreatePledgeForm from "../components/CreatePledgeForm";
 
 function ProjectPage() {
     const { id } = useParams();
@@ -22,6 +23,8 @@ function ProjectPage() {
             <h3>{`Status: ${project.is_open}`}</h3>
             <h5>Goal :{project.goal}</h5>
             <h4>Pledges:</h4>
+            
+            <CreatePledgeForm id={id} project={project.title} />
             <ul> 
                 {project.pledges.map((pledgeData, key) => {
                     return (

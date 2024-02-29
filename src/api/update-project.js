@@ -1,10 +1,10 @@
-async function postProject(projectData) {
-    const url = `${import.meta.env.VITE_API_URL}/projects/`;
+async function updateProject(projectData) {
+    const url = `${import.meta.env.VITE_API_URL}/projects/${projectData.id}`;
     //Date currrentDate = date_created;
     const token = localStorage.getItem("token")
     const response = await fetch(url,
         {
-            method: "POST",// We need to tell the server that we are sending JSON data
+            method: "Put",// We need to tell the server that we are sending JSON data
             //so we set the Content-Type header to application/json
             headers: {
                 "Content-Type": "application/json",
@@ -34,4 +34,4 @@ async function postProject(projectData) {
 
 
 
-export default postProject;
+export default updateProject;

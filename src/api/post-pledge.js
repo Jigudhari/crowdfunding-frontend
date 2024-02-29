@@ -1,20 +1,25 @@
-async function postLogin(username, password) {
-    const url =`${import.meta.env.VITE_API_URL}/api-token-auth/`;
+async function postPledge(pledgeDetails) {
+    const url =`${import.meta.env.VITE_API_URL}/pledges/`;
+    const token = localStorage.getItem("token")
     const response =await fetch(url,
         {method:"POST",// We need to tell the server that we are sending JSON data
         //so we set the Content-Type header to application/json
         headers: {
             "Content-Type": "application/json",
+            "Authorization": `Token ${token}`
         },
         body:JSON.stringify({
-            "username": username,
-            "password": password,
+            ...pledgeDetails
         }),
     });
-   
+
+    if (response.ok)
+    {
+       alert('Welcome here!');
+    }
 
     if (!response.ok) {
-        const fallbackError =`Error trying to login`;
+        const fallbackError =`Error trying to create new pledge!`;
 
         const data =await response.json().catch(() => {
             throw new Error(fallbackError);
@@ -29,4 +34,4 @@ async function postLogin(username, password) {
     
     
 
-export default postLogin;
+export default postPledge;

@@ -1,0 +1,25 @@
+.lable{      
+    height: 25px;		
+    float: left;
+    width : 250px;		
+  margin : 0px 3%;
+}
+.submit
+{
+    background-color: #102D00;
+    color:rgb(135, 42, 102);
+    width:40%;
+    border : none;
+    height:30px;
+    padding: 1%;
+    font-weight: 500;
+    opacity: 0.4;
+    
+}
+.submit:hover {
+background-color: #ee8c63;
+transition: 0.5s; 
+font-weight : 700;  
+border-radius : 2px;
+opacity: 1;
+}
