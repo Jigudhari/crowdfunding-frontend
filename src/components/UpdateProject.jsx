@@ -1,12 +1,14 @@
 import { useState } from "react";
-
-import postProject from "../api/post-project.js"
-import "../pages/CreateProjectPage.css";
+import React from "react";
+import updateProject from "../api/update-project.js"
+//import "../pages/CreateProjectPage.css";
 import useAuth from "../hooks/use-auth.js";
+import {useParams} from "react-router-dom";
+import useProject from "../hooks/use-project";
 
-
-function CreateProjectForm() {
+function UpdateProjectForm() {
     const {auth, setAuth} = useAuth();
+    const { project, isLoading, error } = useProject(useParams().id);
     const[projectdetails, setProjectdetails] = useState({
         title: "",
         description: "",
@@ -14,7 +16,10 @@ function CreateProjectForm() {
         goal: "",
         image: "",
         is_open: true,
+        id : useParams().id,
+        // owner : project.owner       
     });
+   
     const handleChange = (event) => {
         const{ id, value} = event.target;
         setProjectdetails((prevProjectdetails)=> ({
@@ -24,17 +29,18 @@ function CreateProjectForm() {
     };
     
 const handleSubmit = (event) => {
+    console.log(projectdetails)
     event.preventDefault();
-    if(projectdetails.title && projectdetails.description && projectdetails.goal
-         && projectdetails.is_open) {
-            postProject(projectdetails
+    if(projectdetails.id) {
+            console.log("got it!")
+            updateProject(projectdetails
             ).then((response) => {
-                window.localStorage.setItem("token", response.token);
-                alert("Project Launch is successful!");
-
-              });
-            //.catch(()=> alert("Something went wrong"))
-        } else{console.log("Hello!")}
+                //window.localStorage.setItem("token", response.token);
+                alert("Project updated successfully!!");
+              })
+            .catch(()=> alert("Something went wrong"))
+        } 
+        else{console.log("Project not found!!")}
     };    
 
  return( 
@@ -55,4 +61,4 @@ const handleSubmit = (event) => {
   )
 }
 
-export default CreateProjectForm;
+export default UpdateProjectForm;

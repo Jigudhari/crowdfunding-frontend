@@ -24,7 +24,7 @@ function NavBar() {
                     <Link to="/" onClick={handleLogout}> 
                         Log Out
                     </Link>
-                    <Link to="/createpledge">Donate now/</Link>
+                    <Link to="/createpledge">Donate now</Link>
                     <Link to="/Users">Users</Link>
                     <Link to="/launchproject">Launch Project</Link>
                     </>

@@ -10,6 +10,7 @@ import { AuthProvider } from "./components/AuthProvider.jsx";
 import CreatePledgePage from "./pages/CreatePledgePage.jsx";
 
 import NavBar from"./components/NavBar.jsx";
+import UpdateProjectForm from './components/UpdateProject.jsx';
 
 const router =createBrowserRouter([
   {
@@ -20,7 +21,8 @@ const router =createBrowserRouter([
       {path: "/login", element: <LoginPage /> },
       {path:"/launchproject",element:<CreateProjectPage/> },
       {path:"/project/:id", element: <ProjectPage /> },
-      {path:"/createpledge", element: <CreatePledgePage />},
+      {path:"/createpledge", element: <CreatePledgePage /> },
+      {path:"/updateproject/:id", element: <UpdateProjectForm /> },
         ],
       },
     ]);

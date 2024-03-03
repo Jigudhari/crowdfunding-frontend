@@ -45,6 +45,7 @@ function LoginForm() {
                 window.localStorage.setItem("token", response.token);
                 setAuth({
                     token: response.token,
+                    // owner : response.owner
                 });
                 navigate("/")
                 }

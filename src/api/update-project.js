@@ -1,5 +1,5 @@
 async function updateProject(projectData) {
-    const url = `${import.meta.env.VITE_API_URL}/projects/${projectData.id}`;
+    const url = `${import.meta.env.VITE_API_URL}/projects/${projectData.id}/`;
     //Date currrentDate = date_created;
     const token = localStorage.getItem("token")
     const response = await fetch(url,
