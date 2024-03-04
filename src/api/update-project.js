@@ -1,7 +1,20 @@
+
 async function updateProject(projectData) {
+     const getProjecturl =`${import.meta.env.VITE_API_URL}/projects/${projectData.id}`;
+     const getProjResp =await fetch(getProjecturl,{method:"GET"});    
+     if (getProjResp.ok) {
+    const projResp  = await getProjResp.json();
     const url = `${import.meta.env.VITE_API_URL}/projects/${projectData.id}/`;
     //Date currrentDate = date_created;
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem("token");
+    const userid = localStorage.getItem("userid")
+    if(projResp.owner != userid)
+    {
+        alert('You are not authorized to update this project!');
+        return;
+    }
+    else
+    {
     const response = await fetch(url,
         {
             method: "Put",// We need to tell the server that we are sending JSON data
@@ -30,6 +43,9 @@ async function updateProject(projectData) {
         throw new Error(errorMessage);
     }
     return await response.json();
+    }
+    
+}
 }
 
 

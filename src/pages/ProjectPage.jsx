@@ -19,15 +19,15 @@ function ProjectPage() {
 
     return (
         <div>
-            <h1>ID : {project.id}</h1>
-            <h2>{project.title}</h2>
-            <h3>Created at: {project.date_created}</h3>
-            <h4>{`Status: ${project.is_open}`}</h4>
-            <h5>Goal :{project.goal}</h5>
-            <h6>Pledges:</h6>
-            {/* <h7>Owner:{project.owner}</h7> */}
-            
-            <CreatePledgeForm id={id} project={project.title} />
+            <p>ID : {project.id}</p>
+            <p>{project.title}</p>
+            <p>Created at: {project.date_created}</p>
+            <p>{`Status: ${project.is_open}`}</p>
+            <p>Goal :{project.goal}</p>
+            <p>owner :{project.owner}</p>
+            {/* <label for="html">Owner : {project.owner}</label> */}
+            {/* <h6>Pledges:{project.pledges}</h6> */}
+            {/* <h1>Owner:{project.owner}</h1> */}
             <ul> 
                 {project.pledges.map((pledgeData, key) => {
                     return (
@@ -37,6 +37,7 @@ function ProjectPage() {
                     );
                 })}
             </ul>
+            <CreatePledgeForm id={id} project={project.title} />
          </div>
     );
 }

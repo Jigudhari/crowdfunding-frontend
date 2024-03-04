@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from"./pages/HomePage.jsx";
 import ProjectPage from"./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx"
+import RegisterPage from "./pages/RegisterPage.jsx"
 import CreateProjectPage from './pages/CreateProjectPage.jsx';
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import CreatePledgePage from "./pages/CreatePledgePage.jsx";
@@ -19,6 +20,7 @@ const router =createBrowserRouter([
     children: [
       {path:"/", element: <HomePage /> },
       {path: "/login", element: <LoginPage /> },
+      {path: "/Register", element: <RegisterPage /> },
       {path:"/launchproject",element:<CreateProjectPage/> },
       {path:"/project/:id", element: <ProjectPage /> },
       {path:"/createpledge", element: <CreatePledgePage /> },
