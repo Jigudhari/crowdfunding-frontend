@@ -1,4 +1,5 @@
 import React from 'react';
+//import { fetchHeader, fetchFooter } from '../api/about-project.js';
 //import fetchHeader from "../api/about-project.js"
 //import fetchFooter from "../api/about-project.js"
 

@@ -9,3 +9,6 @@ export async function fetchFooter() {
     const response = await fetch(url);
     return await response.text();
 }
+
+export default fetchFooter;
+

@@ -1,12 +1,13 @@
 import { useState } from "react";
 //import { useNavigate } from "react-router-dom";
 import postRegister from "../api/post-register.js";
+import { Link } from "react-router-dom";
 //import useAuth from "../hooks/use-auth.js";
 
 function RegisterForm() {
     //const navigate = useNavigate();
    // const {auth, setAuth} = useAuth();
-
+   //const history = useHistory();
     const [credentials, setCredentials] = useState({
         username: "",
         email: "",
@@ -28,13 +29,20 @@ function RegisterForm() {
         event.preventDefault();
         if (credentials.username && credentials.email && credentials.password 
             && credentials.bio) {
-            postRegister(credentials
-                //credentials.username,
-                //credentials.email,
-                //credentials.password,
-                //credentials.bio,
-                //credentials.image,
-            )} else {console.log('Error registering')};
+            postRegister(
+                //credentials
+                credentials.username,
+                credentials.email,
+                credentials.password,
+                credentials.bio,
+                credentials.image,                
+            );
+            window.location.href='/login';
+        } 
+            else 
+            {
+                console.log('Error registering')
+            };
 
 
                // navigate("/")
@@ -89,7 +97,7 @@ return (
         </div>
         <button type="Register" onClick={handleSubmit}>
             Register
-        </button>
+        </button>       
     </form>
     );
 }

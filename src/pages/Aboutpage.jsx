@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchHeader, fetchFooter } from './Api';
+import { fetchHeader, fetchFooter } from '../api/about-project.js';
 import AboutComponent from '../components/About-Page';
 
 function AboutPage() {

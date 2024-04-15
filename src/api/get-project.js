@@ -1,7 +1,9 @@
 async function getProject(projectId) {
     const url =`${import.meta.env.VITE_API_URL}/projects/${projectId}`;
     const response =await fetch(url,{method:"GET"});
-
+    const userid = localStorage.getItem("userid");
+    console.log(userid);
+    
     if (!response.ok) {
         const fallbackError =`Error fetching project with id ${projectId}`;
        

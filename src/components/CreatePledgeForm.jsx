@@ -48,9 +48,6 @@ return(
         <button type="submit" onClick={handleSubmit}> 
             submit
         </button>
-        <button type="button"> 
-        <Link to={`/updateproject/${id}`}>Update Project</Link>
-             </button>
     </form>
   )
 }

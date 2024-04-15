@@ -2,16 +2,16 @@
 
 form {
     
-    padding: 10% 25%;
+    padding: 10% 30%;
 }
-label {
+/* label {
     background-color: rgb(227, 153, 200);
     border-radius: 2px ;
     margin-right: 20px;
     border-radius: 2px;
     cursor: pointer;
     color: rgb(15, 10, 10);;
-}
+} */
 
     /*input[type=text], input[type=password] {
     width: 30%;

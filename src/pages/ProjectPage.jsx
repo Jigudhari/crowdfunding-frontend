@@ -17,6 +17,7 @@ function ProjectPage() {
         return (<p>{error.message}</p>)
     }
 
+
     return (
         <div>
             <p>ID : {project.id}</p>
@@ -32,15 +33,18 @@ function ProjectPage() {
                 {project.pledges.map((pledgeData, key) => {
                     return (
                         <li key={key}>
-                            {pledgeData.amount} from {pledgeData.supporter}
+                            ${pledgeData.amount} from {pledgeData.supporter}
                         </li>
                     );
                 })}
             </ul>
+            <a href="/updateproject/${id}" target="_blank">
+                Update project
+            </a>
             <CreatePledgeForm id={id} project={project.title} />
+ 
          </div>
     );
 }
-    
 
 export default ProjectPage
