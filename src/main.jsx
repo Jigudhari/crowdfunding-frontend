@@ -9,7 +9,7 @@ import RegisterPage from "./pages/RegisterPage.jsx"
 import CreateProjectPage from './pages/CreateProjectPage.jsx';
 import { AuthProvider } from "./components/AuthProvider.jsx";
 import CreatePledgePage from "./pages/CreatePledgePage.jsx";
-import AboutPage from "./pages/AboutPage.jsx";
+// import AboutPage from "./pages/AboutPage.jsx";
 
 import NavBar from"./components/NavBar.jsx";
 import UpdateProjectForm from './components/UpdateProject.jsx';
@@ -26,7 +26,8 @@ const router =createBrowserRouter([
       {path:"/project/:id", element: <ProjectPage /> },
       {path:"/createpledge", element: <CreatePledgePage /> },
       {path:"/updateproject/:id", element: <UpdateProjectForm /> },
-      {path:"/about", element: <AboutPage /> }],
+      // {path:"/about", element: <AboutPage /> }
+    ],
       },
     ]);
     
